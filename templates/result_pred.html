@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/result_pred.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='result_pred.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <h1>Titanic Survival Prediction</h1>
+        <div class = "div-tab">
+            <h3>Recall of your Survivor Information</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Ticket Class</th>
+                    <th>Cabin</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Port of Embarkation</th>
+                    <th>Name Title</th>
+                    <th>Travel Alone</th>
+                    <th>Travel Relative</th>
+                  </tr>
+                </thead>
+                <tbody class="section section-step">
+                  <tr>
+                    <td data-label ="Ticket Class">{{ data.Pclass }}</td>
+                    <td data-label ="Cabin">{{ data.Cabin }}</td>
+                    <td data-label ="Age">{{ data.Age }}</td>
+                    <td data-label ="Gender">{{ data.Gender }}</td>
+                    <td data-label ="Port of Embarkation">{{ data.P_Embarkation }}</td>
+                    <td data-label ="Name Title">{{ data.Name_Title }}</td>
+                    <td data-label ="Travel Alone">{{ data.Trav_Aln }}</td>
+                    <td data-label ="Travel Relative">{{ data.Travel_Relative }}</td>
+                  </tr>
+                </tbody>
+            </table>
+            <hr>
+
+            <p id="survival_string">
+                {{ resp_main }} 
+                <br>
+                {{ resp_sec }} 
+            </p> 
+      </div>
+    
+      <div class="center">
+        <button class="glow-on-hover" onclick=window.location.href="{{ url_for( 'main') }}"><span>Return to Main Menu</span> 
+        <button class="glow-on-hover" onclick=window.location.href="{{ url_for( 'prediction_form') }}";><span>Return to Personalized Prediction</span> 
+        <button class="glow-on-hover" onclick=window.location.href="{{ url_for('random_submit') }}"><span>Relaunch a Random Prediction</span> 
+
+    </div>
+
+
+
+
+    </body>
+
+</html>

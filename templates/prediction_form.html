@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/prediction_form.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='prediction_form.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <h1>Titanic Survival Prediction</h1>
+
+        <form class = "general_form" action="{{ url_for('submit') }}" method="post" onsubmit = "return(validate());">
+          
+            <fieldset class = "general_fieldset">
+                <legend id = "Blegend">Titanic Survivor Form</legend>  
+                <p class = "p_info">
+                    To make a prediction, you must answer the following questions by checking the buttons or filling the text areas. <br>
+                    All the information are relevant (in different levels) to predict your chances to survive in the Titanic
+                </p>
+                <fieldset>
+                    <legend>What is your Ticket Class?</legend>  
+                    <input type="radio" name="Pclass" value=1 onclick="displayNameTitle()">First Class 
+                    <input type="radio" name="Pclass" value=2 onclick="displayNameTitle()">Second Class 
+                    <input type="radio" name="Pclass" value=3 onclick="displayNameTitle()">Third Class 
+                </fieldset>  
+
+                <fieldset>
+                    <legend>Does your ticket include a Cabin?</legend>  
+                    <input type="radio" name="Cabin" value=1>Yes
+                    <input type="radio" name="Cabin" value=0>No 
+                </fieldset> 
+
+                <fieldset>
+                    <legend>What is your Age?</legend>  
+                    <input name="Age", type="number" step="1", min="1", max="75" oninput="displayTravel()">                     
+                </fieldset> 
+
+                <fieldset>
+                    <legend>What is your Gender?</legend>  
+                    <input type="radio" name="Sex" value=0 onclick="displayNameTitle()">Female
+                    <input type="radio" name="Sex" value=1 onclick="displayNameTitle()">Male 
+                </fieldset>
+
+                <fieldset>
+                    <legend>What is your Port of Embarkation?</legend>  
+                    <input type="radio" name="Embarkation" value=0>Cherbourg
+                    <input type="radio" name="Embarkation" value=1>Queenstown 
+                    <input type="radio" name="Embarkation" value=2>Southampton 
+                </fieldset>
+
+                <fieldset>
+                    <legend>What is your Name Title?</legend>  
+                    <input type="radio" name="NameTitle" value=1><label class = "label_NameTitle">Mr.</label>
+                    <input type="radio" name="NameTitle" value=2><label class = "label_NameTitle">Miss.</label> 
+                    <input type="radio" name="NameTitle" value=3><label class = "label_NameTitle">Mrs.</label>
+                    <input type="radio" name="NameTitle" value=4><label class = "label_NameTitle">Master.</label>
+                    <input type="radio" name="NameTitle" value=5><label class = "label_NameTitle">Other Title</label> 
+                </fieldset>
+
+                <fieldset>
+                    <legend>Do you Travel Alone?</legend>  
+                    <input type="radio" name="TravelAlone" value=1 onclick="displayRadioValue()"><label class = "label_TravelAlone" >Yes</label>
+                    <input type="radio" name="TravelAlone" value=0 onclick="displayRadioValue()"><label class = "label_TravelAlone" >No</label>
+                </fieldset> 
+
+                <fieldset id = "trav_pers">
+                    <legend>How many people Travel with You?</legend>  
+                    <input name="TravelNum", type="number" step="1", min="1", max="6"> 
+                </fieldset> 
+
+            </fieldset>  
+            <div class="center">
+                <button class="glow-on-hover" type="submit"><span>Predict</span></button>
+                <button class="glow-on-hover" type="submit" onclick=randomFill()><span>Random Prediction</span></button>
+            </div>
+
+
+        </form>  
+        <div id="confirm">
+            <div class="message">This is a warning message.</div><br>
+            <button class="yes">Continue</button>
+         </div>
+
+    </body>
+</html>

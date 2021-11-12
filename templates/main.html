@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Titanic Survival Prediction</title>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <h2 id="main_title">Titanic Survival Prediction</h2>
+
+    <div class ="all">
+    <h5 class = "sub_title" >How do you wish to predict your survival chances?</h5>
+
+    <div class="row">
+        <div class="col s4 ">
+ 
+                    <div class="card", id="ran">
+                        <button id = "predict_card" onclick=window.location.href="{{ url_for( 'prediction_form') }}">
+                            <span class="card-title", style='color: burlywood'>Personalized Prediction</span>                       
+                        <div class="card-content">
+                            <p> If you select a personalized prediction, you will be able to have the most accurate prediction of survival. 
+                                    You will get a prediction of survival in function of your ticket information.</p>
+                        </div>  
+                            </button>
+                    </div>
+
+        </div>
+
+
+        <div class="col s4 ">
+            <div class="card", id="ran">
+                    <button id = "predict_card" onclick=window.location.href="{{ url_for( 'random_submit') }}">
+                    <span class="card-title", style='color: burlywood'>Random Variables</span>
+                <div class="card-content">
+                    <p> If you select the random variables, you won't have to fill a form with your ticket information or chose a fare.
+                        You will get a prediction of survival in function of the random variables.</p>
+                </div>  
+                    </button>
+            </div>
+        </div>
+
+    </div>
+
+    <h5 class = "sub_title" >Chose the more convenient class for you</h5>
+
+    <div class="row">
+        <div class="col s12 m4">
+          <div class="card", id="info">
+            <div class="card-image">
+              <img src="{{url_for('static', filename='images/firstclasscabin.jpg') }}">
+              <span class="card-title", style='color:aliceblue'>First Class</span>
+              <button  onclick=window.location.href="{{ url_for( 'random_firstclass') }}" class="btn-floating halfway-fab waves-effect waves-light brown"><i class="material-icons">directions_boat</i></button>
+            </div>
+            <div class="card-content">
+              <p>First-class accommodations are decorated luxurious.  You will have your own wardrobe rooms, private baths. All first-class accommodations are equipped with telephones, heaters. </p>
+                <p> In addition, you will have priority access to the gymnasium, swimming pool, turkish baths, dinning salon, etc. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card", id="info">
+                <div class="card-image">
+                    <img src="{{url_for('static', filename='images/second_class.jpg') }}">
+                    <span class="card-title", style='color:aliceblue'>Second Class</span>
+                    <button  onclick=window.location.href="{{ url_for( 'random_secondclass') }}" class="btn-floating halfway-fab waves-effect waves-light brown"><i class="material-icons">directions_boat</i></button>
+                </div>
+                <div class="card-content">
+                    <p> Rooms are composed of 2 to 4 berths built into the walls of the cabins. 
+                        To have a better privacy a curtain around to bed is available. 
+                        Each second-class cabin had a washbasin and a chamber pot  but the bathrooms are common.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card", id="info">
+                <div class="card-image">
+                    <img src="{{url_for('static', filename='images/third_class.jpg') }}">
+                    <span class="card-title", style='color:aliceblue'>Third Class</span>
+                    <button  onclick=window.location.href="{{ url_for( 'random_thirdclass') }}" class="btn-floating halfway-fab waves-effect waves-light brown"><i class="material-icons">directions_boat</i></button>
+                </div>
+                <div class="card-content">
+                    <p> Third-class rooms have 4 to 6  bunk beds. </p>
+                    <p>
+                        Like second-class passengers, they share bathrooms, but the number of people sharing a bathroom is higher.  
+                        Only two bathtubs are available for all 710 third-class passengers, one for the men and one for the women.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+</body>
+
