@@ -1,7 +1,7 @@
 # Final Project - Titanic Survivor Prediction
 
     Contributors: ROULET Maria Paula & ROUX Dorian  
-    Web App Link: https
+    Web App Link: https://titanicsurvivorprediction-zpclogepwq-ew.a.run.app
 
 ---
 
