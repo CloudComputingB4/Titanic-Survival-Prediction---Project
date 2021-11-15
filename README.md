@@ -67,3 +67,4 @@ In the case the user choses the personalized prediction, then, he/she will see a
 In that last page, you can have a recall of your information and you will know either you survived from sinking or not with a certain percentage.
 
 ---
+All images used are open-source and non copyright.
