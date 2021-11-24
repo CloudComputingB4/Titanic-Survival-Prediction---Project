@@ -54,7 +54,7 @@ The deployment of the web app does not require to allocate a lot of CPUs nor a h
 
 ## Problems
 
-In the creation of the application, we do not face much issues except during the deployement where some python libraries were not at the required version.
+In the creation of the application, we do not face much issues except during the deployment where some python libraries were not at the required version.
 
 ## Web App Operation
 
